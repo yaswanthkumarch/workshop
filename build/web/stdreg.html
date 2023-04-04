@@ -1,0 +1,102 @@
+<html>
+<title>Workshop CN & IP</title>
+<head>
+<script type="text/javascript">
+function validation(){
+var a = document.Reg.mobno.value;
+if(isNaN(a)){
+alert("Mobile number should be numbers only");
+document.Reg.mobno.focus();
+return false;
+}
+if(a.length != 10){
+alert("Mobile number should be 10 numbers only");
+document.Reg.mobno.focus();
+return false;
+}
+if((a.charAt(0)!=9) && (a.charAt(0)!=8) && (a.charAt(0)!=7) && (a.charAt(0)!=6)){
+alert("Number should start with 6 or 7 or 8 0r 9 only");
+document.Reg.mobno.focus();
+return false;
+}
+return true;
+}
+</script>
+<style>
+ul{
+height: 100px;
+width: auto;
+}
+ul li{
+list-style: none;
+float:left;
+}
+ul li a{
+text-decoration: none;
+padding-left: 20px;
+}
+</style>
+</head>
+<body bgcolor="Green">
+<h1><font size="10" color="red" ><i><center>Workshop Application</center></i></font></h1>
+<center><h1>Welcome to student registration form</h1></center>
+<ul>
+<li><a href="first.html">Home</a></li>
+<li><a href="stdreg.html">Student Registration</a></li>
+<li><a href="login.html">Student Login</a></li>
+<li><a href="facreg.html">Faculty Registration</a></li>
+<li><a href="faclogin.html">Faculty Login</a></li>
+</ul>
+<img  src="img/1.jpg" width="200px" height="200px" style="float:left;">
+<form name="Reg" action="db.jsp" method="post" onsubmit="return validation()">
+<table style="margin-left:350px;" border="3px" cellpadding="5px">
+<tr>
+<td>Name</td>
+<td><input type="text" name="name" required></td>
+</tr>
+<tr>
+<td>Roll No:</td>
+<td><input type="text" name="rollno" required></td>
+</tr>
+<tr>
+<td>Branch</td>
+<td><select name="branch">
+<option value="CSE">CSE</option>
+<option value="Civil">Civil</option>
+<option value="Mech">Mech</option>
+<option value="EEE">EEE</option>
+<option value="ECE">ECE</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Section</td>
+<td><select name="section">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Email-ID: </td>
+<td><input type="email" name="email" required></td>
+</tr>
+<tr>
+<td>Mobile No: </td>
+<td><input type="text" name="mobno" required></td>
+</tr>
+<tr>
+<td>Password: </td>
+<td><input type="password" name="password" required></td>
+</tr>
+<tr>
+<td><input type="submit" value="Register"> </td>
+<td><input type="reset"> </td>
+</tr>
+</table>
+</form>
+</body>
+</html>
